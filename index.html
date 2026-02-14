@@ -37,24 +37,48 @@
             },
         };
     </script>
-<style>
-        body {
-            background-color: #000000;
-            color: #EDEDED;
-            font-family: 'Inter', sans-serif;
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #090909;
+            --border-color: #1F1F1F;
+            --text-primary: #EDEDED;
+            --text-secondary: #A1A1A1;
         }
+        
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --border-color: #e0e0e0;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
         .bento-card {
-            background-color: #090909;
-            border: 1px solid #1F1F1F;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
         .bento-card:hover {
             border-color: #444444;
             background-color: #0F0F0F;
         }
+        [data-theme="light"] .bento-card:hover {
+            border-color: #999;
+            background-color: #ebebeb;
+        }
+        
         .display-font {
             font-family: 'Space Grotesk', sans-serif;
         }
+        
         .noise-bg {
             position: relative;
         }
@@ -69,11 +93,12 @@
             pointer-events: none;
             z-index: 10;
         }
+        
         ::-webkit-scrollbar {
             width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #000000; 
+            background: var(--bg-primary); 
         }
         ::-webkit-scrollbar-thumb {
             background: #333; 
@@ -82,11 +107,163 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555; 
         }
+        
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+        .fade-in-delay-4 { animation-delay: 0.4s; }
+        .fade-in-delay-5 { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #22c55e;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #22c55e }
+        }
+        
+        /* Progress bar animation */
+        .progress-bar {
+            width: 0;
+            transition: width 1s ease-out;
+        }
+        
+        .progress-bar.animate {
+            width: var(--progress);
+        }
+        
+        /* Visitor counter */
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family: monospace;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .visitor-counter .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Theme toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        /* Tech logos hover effect */
+        .tech-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="min-h-screen p-4 md:p-8 lg:p-12 antialiased selection:bg-white selection:text-black">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
+        <span class="material-symbols-outlined text-sm" id="theme-icon">light_mode</span>
+    </button>
+    
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <span class="pulse-dot"></span>
+        <span id="visitor-count">Cargando...</span>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">¡Email copiado al portapapeles!</div>
+
 <main class="max-w-7xl mx-auto space-y-6">
-<header class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#1F1F1F] pb-8 mb-10">
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#1F1F1F] pb-8 mb-10 fade-in">
 <div class="space-y-4">
 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-[#1F1F1F] bg-[#090909]">
 <span class="relative flex h-2 w-2">
@@ -115,9 +292,9 @@
 <a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 group" href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" aria-label="LinkedIn">
 <i class="fa-brands fa-linkedin-in text-lg"></i>
 </a>
-<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group" href="mailto:contact@ignaciopalmeri.com" aria-label="Email">
+<button class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group" onclick="copyEmail()" aria-label="Copiar email">
 <i class="fa-solid fa-envelope text-lg"></i>
-</a>
+</button>
 </div>
 <div class="text-right hidden md:block">
 <p class="text-xs text-[#333] font-mono">BSAS, ARGENTINA</p>
@@ -342,7 +519,7 @@
 <span class="text-[10px] font-mono text-[#888] bg-[#111] px-2 py-0.5 rounded border border-[#222]">Certificación (Bases)</span>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-red-600 h-full w-[85%]"></div>
+<div class="bg-red-600 h-full progress-bar" style="--progress: 85%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -353,7 +530,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-yellow-600 h-full w-[80%]"></div>
+<div class="bg-yellow-600 h-full progress-bar" style="--progress: 80%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -364,7 +541,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-purple-500 h-full w-[65%]"></div>
+<div class="bg-purple-500 h-full progress-bar" style="--progress: 65%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -375,7 +552,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-blue-500 h-full w-[50%]"></div>
+<div class="bg-blue-500 h-full progress-bar" style="--progress: 50%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -386,7 +563,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-orange-600 h-full w-[45%]"></div>
+<div class="bg-orange-600 h-full progress-bar" style="--progress: 45%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -397,7 +574,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-green-700 h-full w-[70%]"></div>
+<div class="bg-green-700 h-full progress-bar" style="--progress: 70%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -408,7 +585,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-pink-600 h-full w-[40%]"></div>
+<div class="bg-pink-600 h-full progress-bar" style="--progress: 40%"></div>
 </div>
 </div>
 <div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
@@ -423,7 +600,7 @@
 </div>
 </div>
 <div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
-<div class="bg-yellow-400 h-full w-[35%]"></div>
+<div class="bg-yellow-400 h-full progress-bar" style="--progress: 35%"></div>
 </div>
 </div>
 </div>
@@ -465,4 +642,115 @@
 </div>
 </footer>
 </main>
+
+<script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            
+            if (html.getAttribute('data-theme') === 'light') {
+                html.removeAttribute('data-theme');
+                icon.textContent = 'light_mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                icon.textContent = 'dark_mode';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.getElementById('theme-icon').textContent = 'dark_mode';
+        }
+        
+        // Copy Email to Clipboard
+        function copyEmail() {
+            const email = 'ignaciopalmeri1@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                showToast('¡Email copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+            });
+        }
+        
+        // Show Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Visitor Counter (simulated with localStorage)
+        function updateVisitorCount() {
+            const countElement = document.getElementById('visitor-count');
+            let count = localStorage.getItem('visitorCount');
+            
+            if (!count) {
+                // Simulate a starting count
+                count = Math.floor(Math.random() * 500) + 100;
+            } else {
+                count = parseInt(count) + Math.floor(Math.random() * 3) + 1;
+            }
+            
+            localStorage.setItem('visitorCount', count);
+            countElement.textContent = `${count.toLocaleString()} visitas`;
+        }
+        
+        updateVisitorCount();
+        
+        // Animate progress bars on scroll
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+        
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        progressBars.forEach(bar => {
+            progressObserver.observe(bar);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in classes to elements as they scroll into view
+        const fadeElements = document.querySelectorAll('.bento-card, .md\\:col-span-8, .md\\:col-span-4');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.1}s`;
+            fadeObserver.observe(el);
+        });
+    </script>
 </body></html>
