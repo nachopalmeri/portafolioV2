@@ -9,9 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
   
-  <meta name="description" content="Proyectos Web de Ignacio Palmeri - Landing Pages y más">
+  <meta name="description" content="Proyectos Web de Ignacio Palmeri">
   <meta property="og:title" content="Proyectos Web | Ignacio Palmeri">
-  <meta property="og:description" content="Explora mis proyectos de desarrollo web">
   <meta property="og:type" content="website">
   
   <style>
@@ -41,16 +40,15 @@
         radial-gradient(950px 550px at -10% -20%, #5d2e55 0%, transparent 55%),
         radial-gradient(850px 500px at 110% 0%, #1f3b76 0%, transparent 58%),
         linear-gradient(175deg, #0f1117 0%, #090b11 100%);
-      background-color: var(--bg);
+      background-color: #000000;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1150px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Header */
     header {
       padding: 60px 0 40px;
       text-align: center;
@@ -86,9 +84,9 @@
       font-family: 'Syne', sans-serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 800;
-      margin-bottom: 16px;
       color: white;
       letter-spacing: -0.02em;
+      margin-bottom: 16px;
     }
 
     .subtitle {
@@ -99,7 +97,6 @@
       line-height: 1.6;
     }
 
-    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -111,10 +108,10 @@
       background: var(--bg-secondary);
       border: 1px solid var(--border-color);
       border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s ease;
-      position: relative;
+      padding: 0;
       overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
 
     .project-card::before {
@@ -127,12 +124,13 @@
       background: linear-gradient(90deg, var(--accent), var(--success));
       opacity: 0;
       transition: opacity 0.3s;
+      z-index: 10;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
-      border-color: #444444;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transform: translateY(-8px);
+      border-color: #444;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     }
 
     .project-card:hover::before {
@@ -140,12 +138,11 @@
     }
 
     .project-card.coming-soon {
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     .project-card.coming-soon:hover {
       transform: none;
-      border-color: var(--border-color);
       box-shadow: none;
       cursor: default;
     }
@@ -154,16 +151,54 @@
       display: none;
     }
 
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--accent), var(--success));
-      border-radius: 12px;
+    .card-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, var(--bg-secondary), transparent);
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .project-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--success));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .project-card.coming-soon .project-icon {
@@ -176,45 +211,44 @@
       color: var(--accent);
       padding: 4px 12px;
       border-radius: 20px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     .project-card.coming-soon .project-tag {
       background: rgba(245, 158, 11, 0.15);
-      color: var(--warning);
+      color: #f59e0b;
     }
 
     .project-card h3 {
       font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 12px;
+      font-size: 1.3rem;
       color: white;
+      margin-bottom: 8px;
     }
 
     .project-card p {
       color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 12px;
     }
 
     .tech-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 6px;
+      margin-bottom: 12px;
     }
 
     .tech-tag {
       background: #111;
       color: var(--text-secondary);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 10px;
       font-family: monospace;
       border: 1px solid #222;
     }
@@ -223,19 +257,20 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: white;
+      color: #000;
       text-decoration: none;
       font-weight: 600;
-      padding: 10px 16px;
+      padding: 10px 18px;
       background: var(--accent);
       border-radius: 8px;
       transition: all 0.3s ease;
+      font-size: 14px;
     }
 
     .project-link:hover {
       gap: 12px;
       background: var(--accent-hover);
-      color: black;
+      transform: scale(1.02);
     }
 
     .coming-soon-badge {
@@ -243,14 +278,13 @@
       align-items: center;
       gap: 6px;
       background: rgba(245, 158, 11, 0.15);
-      color: var(--warning);
+      color: #f59e0b;
       padding: 10px 16px;
       border-radius: 8px;
       font-size: 14px;
       font-weight: 500;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border-color);
       padding: 32px 0;
@@ -271,226 +305,9 @@
       color: var(--accent-hover);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-      
-      h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
-</head>
-      color: var(--success);
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-size: 14px;
-      margin-bottom: 24px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--success);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.2); }
-    }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto 32px;
-      line-height: 1.6;
-    }
-
-    /* Projects Grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      padding: 40px 0 80px;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--success));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent);
-      box-shadow: var(--shadow);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-card.coming-soon {
-      opacity: 0.6;
-    }
-
-    .project-card.coming-soon:hover {
-      transform: none;
-      border-color: var(--line);
-      box-shadow: none;
-      cursor: default;
-    }
-
-    .project-card.coming-soon::before {
-      display: none;
-    }
-
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--accent), var(--success));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .project-card.coming-soon .project-icon {
-      background: var(--line);
-    }
-
-    .project-tag {
-      display: inline-block;
-      background: rgba(99, 102, 241, 0.2);
-      color: var(--accent-hover);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .project-card.coming-soon .project-tag {
-      background: rgba(245, 158, 11, 0.2);
-      color: var(--warning);
-    }
-
-    .project-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .tech-tag {
-      background: var(--bg-soft);
-      color: var(--muted);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      border: 1px solid var(--line);
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      transition: gap 0.3s;
-    }
-
-    .project-link:hover {
-      gap: 12px;
-      color: var(--accent-hover);
-    }
-
-    .coming-soon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--warning);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 32px 0;
-      text-align: center;
-    }
-
-    footer p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      h1 {
-        font-size: 2rem;
       }
     }
   </style>
@@ -507,85 +324,107 @@
     </header>
 
     <section class="projects-grid">
-      <!-- Comida de Barrio -->
       <article class="project-card">
+        <div class="card-image" style="background: linear-gradient(135deg, #ff6b35, #f7931e);">
+          🍽️
+        </div>
         <div class="project-icon">🍽️</div>
-        <span class="project-tag">Activo</span>
-        <h3>Comida de Barrio</h3>
-        <p>Plataforma de delivery con carrito de compras, favoritos, búsqueda de restaurantes y diseño responsivo.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">LocalStorage</span>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="project-tag">Activo</span>
+          </div>
+          <h3>Comida de Barrio</h3>
+          <p>Plataforma de delivery con carrito de compras, favoritos, búsqueda de restaurantes y diseño responsivo.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">LocalStorage</span>
+          </div>
+          <a href="https://comidadebarrio.vercel.app/" target="_blank" class="project-link">
+            Ver proyecto <span>→</span>
+          </a>
         </div>
-        <a href="https://comidadebarrio.vercel.app/" target="_blank" class="project-link">
-          Ver proyecto <span>→</span>
-        </a>
       </article>
 
-      <!-- Landing Pages -->
       <article class="project-card">
+        <div class="card-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+          🎨
+        </div>
         <div class="project-icon">🎨</div>
-        <span class="project-tag">Activo</span>
-        <h3>Landing Pages</h3>
-        <p>Desarrollo de landing pages personalizadas para negocios locales. Diseño responsivo y optimizado.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">HTML/CSS</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Responsive</span>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="project-tag">Activo</span>
+          </div>
+          <h3>Landing Pages</h3>
+          <p>Desarrollo de landing pages personalizadas para negocios locales. Diseño responsivo y optimizado.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+          <a href="https://dom-uwok.vercel.app/" target="_blank" class="project-link">
+            Ver proyecto <span>→</span>
+          </a>
         </div>
-        <a href="https://dom-uwok.vercel.app/" target="_blank" class="project-link">
-          Ver proyecto <span>→</span>
-        </a>
       </article>
 
-      <!-- Próximamente -->
       <article class="project-card coming-soon">
+        <div class="card-image" style="background: linear-gradient(135deg, #374151, #1f2937);">
+          🤖
+        </div>
         <div class="project-icon">🤖</div>
-        <span class="project-tag">Próximamente</span>
-        <h3>&nbsp;</h3>
-        <div class="coming-soon-badge">
-          <span>🚧</span> En construcción
+        <div class="card-content">
+          <div class="card-header">
+            <span class="project-tag">Próximamente</span>
+          </div>
+          <div class="coming-soon-badge" style="margin-top: 60px;">
+            <span>🚧</span> En construcción
+          </div>
         </div>
       </article>
 
-      <!-- Próximamente -->
       <article class="project-card coming-soon">
+        <div class="card-image" style="background: linear-gradient(135deg, #374151, #1f2937);">
+          ⛓️
+        </div>
         <div class="project-icon">⛓️</div>
-        <span class="project-tag">Próximamente</span>
-        <h3>&nbsp;</h3>
-        <div class="coming-soon-badge">
-          <span>🚧</span> En construcción
+        <div class="card-content">
+          <div class="card-header">
+            <span class="project-tag">Próximamente</span>
+          </div>
+          <div class="coming-soon-badge" style="margin-top: 60px;">
+            <span>🚧</span> En construcción
+          </div>
         </div>
       </article>
 
-      <!-- Próximamente -->
       <article class="project-card coming-soon">
+        <div class="card-image" style="background: linear-gradient(135deg, #374151, #1f2937);">
+          ⚽
+        </div>
         <div class="project-icon">⚽</div>
-        <span class="project-tag">Próximamente</span>
-        <h3>&nbsp;</h3>
-        <div class="coming-soon-badge">
-          <span>🚧</span> En construcción
+        <div class="card-content">
+          <div class="card-header">
+            <span class="project-tag">Próximamente</span>
+          </div>
+          <div class="coming-soon-badge" style="margin-top: 60px;">
+            <span>🚧</span> En construcción
+          </div>
         </div>
       </article>
 
-      <!-- Próximamente -->
       <article class="project-card coming-soon">
-        <div class="project-icon">✨</div>
-        <span class="project-tag">Próximamente</span>
-        <h3>&nbsp;</h3>
-        <div class="coming-soon-badge">
-          <span>🚧</span> En construcción
+        <div class="card-image" style="background: linear-gradient(135deg, #374151, #1f2937);">
+          🚀
         </div>
-      </article>
-
-      <!-- Próximamente -->
-      <article class="project-card coming-soon">
         <div class="project-icon">🚀</div>
-        <span class="project-tag">Próximamente</span>
-        <h3>&nbsp;</h3>
-        <div class="coming-soon-badge">
-          <span>🚧</span> En construcción
+        <div class="card-content">
+          <div class="card-header">
+            <span class="project-tag">Próximamente</span>
+          </div>
+          <div class="coming-soon-badge" style="margin-top: 60px;">
+            <span>🚧</span> En construcción
+          </div>
         </div>
       </article>
     </section>
