@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Portfolio de Ignacio Palmeri - Estudiante de Sistemas especializado en Python, Linux, Web3 y automatización. Proyectos con Polymarket, Telegram bots y blockchain."/>
+<meta name="keywords" content="Ignacio Palmeri, Portfolio, Python, Linux, Web3, Blockchain, Automation, Developer"/>
+<meta name="author" content="Ignacio Palmeri"/>
+<meta property="og:title" content="Ignacio Palmeri - Portfolio"/>
+<meta property="og:description" content="Estudiante de Sistemas & Curioso Tech - Explorando Linux, Finanzas y Automatización"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ignaciopalmeri.com"/>
+<meta property="og:image" content="https://ignaciopalmeri.com/og-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>"/>
+<title>Ignacio Palmeri - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#000000",
+                        surface: "#090909",
+                        border: "#1F1F1F",
+                        "text-primary": "#EDEDED",
+                        "text-secondary": "#A1A1A1",
+                        accent: "#EDEDED", 
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Space Grotesk", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #EDEDED;
+            font-family: 'Inter', sans-serif;
+        }
+        .bento-card {
+            background-color: #090909;
+            border: 1px solid #1F1F1F;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            border-color: #444444;
+            background-color: #0F0F0F;
+        }
+        .display-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .noise-bg {
+            position: relative;
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 10;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 lg:p-12 antialiased selection:bg-white selection:text-black">
+<main class="max-w-7xl mx-auto space-y-6">
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#1F1F1F] pb-8 mb-10">
+<div class="space-y-4">
+<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-[#1F1F1F] bg-[#090909]">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+<span class="text-[10px] md:text-xs font-mono font-medium text-text-secondary uppercase tracking-widest">DISPONIBLE PARA TRABAJAR</span>
+</div>
+<div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-black display-font tracking-tighter text-white leading-none uppercase">
+                        Ignacio<br/>Palmeri
+                    </h1>
+</div>
+<div class="space-y-1">
+<h2 class="text-xl md:text-2xl font-medium text-white">Estudiante de Sistemas &amp; Curioso Tech</h2>
+<p class="text-text-secondary max-w-lg text-sm md:text-base leading-relaxed">
+                        Explorando la intersección entre Linux, Finanzas y Automatización. Aprendiendo a construir herramientas reales con Python e IA.
+                    </p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-4 mt-8 md:mt-0">
+<div class="flex items-center gap-3">
+<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group" href="https://github.com/nachopalmeri" target="_blank" aria-label="GitHub">
+<i class="fa-brands fa-github text-lg"></i>
+</a>
+<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 group" href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" aria-label="LinkedIn">
+<i class="fa-brands fa-linkedin-in text-lg"></i>
+</a>
+<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group" href="mailto:contact@ignaciopalmeri.com" aria-label="Email">
+<i class="fa-solid fa-envelope text-lg"></i>
+</a>
+</div>
+<div class="text-right hidden md:block">
+<p class="text-xs text-[#333] font-mono">BSAS, ARGENTINA</p>
+<p class="text-xs text-[#333] font-mono">UTC-3</p>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-min">
+<a href="https://polytools-omega.vercel.app/" target="_blank" class="md:col-span-7 bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group noise-bg relative overflow-hidden h-[400px] cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#090909] to-[#000000]"></div>
+<div class="relative z-20 flex justify-between items-start">
+<div class="border border-[#333] px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+<span class="text-xs font-mono text-white">PROYECTO DESTACADO</span>
+</div>
+<span class="material-symbols-outlined text-[#333] group-hover:text-white transition-colors">arrow_outward</span>
+                </div>
+                <div class="relative z-20 my-auto py-8">
+                    <div class="font-mono text-xs text-green-500 mb-2 leading-relaxed">
+                        &gt; conectando_api_polymarket<br/>
+                        &gt; telegram_bot: ACTIVE<br/>
+                        &gt; estado: <span class="animate-pulse">ONLINE</span>
+                    </div>
+                </div>
+                <div class="relative z-20 mt-auto">
+                    <h3 class="text-3xl font-bold text-white mb-2">Bot de seguimiento de wallets</h3>
+<p class="text-text-secondary mb-4 max-w-md">Sistema en Python conectado a API de Polymarket para alertas en tiempo real vía Telegram. Manejo seguro de credenciales.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Python</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Telegram API</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Polymarket</span>
+</div>
+</div>
+</a>
+<a href="https://fulbotracker.vercel.app/" target="_blank" class="md:col-span-5 bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group noise-bg relative overflow-hidden h-[400px] cursor-pointer">
+<div class="absolute top-10 right-[-20px] w-[80%] h-[80%] opacity-20 group-hover:opacity-30 transition-opacity transform rotate-3 z-0 border border-[#333] bg-[#111] rounded-xl overflow-hidden">
+<div class="w-full h-8 border-b border-[#333] bg-[#000] flex items-center px-2 gap-1">
+<div class="w-2 h-2 rounded-full bg-[#333]"></div>
+<div class="w-2 h-2 rounded-full bg-[#333]"></div>
+</div>
+<div class="p-4 grid grid-cols-3 gap-2">
+<div class="h-20 bg-[#222] rounded"></div>
+<div class="h-20 bg-[#222] rounded col-span-2"></div>
+<div class="h-40 bg-[#222] rounded col-span-3"></div>
+</div>
+</div>
+<div class="relative z-20 flex justify-between items-start">
+                <div class="w-10 h-10 rounded-full border border-[#333] flex items-center justify-center bg-black">
+                    <span class="material-symbols-outlined text-white text-lg">token</span>
+                </div>
+                <span class="material-symbols-outlined text-[#333] group-hover:text-white transition-colors">arrow_outward</span>
+            </div>
+            <div class="relative z-20 mt-auto">
+                <h3 class="text-2xl font-bold text-white mb-2">DApp Registro Blockchain</h3>
+<p class="text-text-secondary text-sm mb-4">Aplicación descentralizada en Base Network para registros inmutables mediante Smart Contracts.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Solidity</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Web3.py</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Base</span>
+</div>
+</div>
+</a>
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+<a href="#" target="_blank" class="bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group h-auto min-h-[250px] relative overflow-hidden cursor-pointer">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-white">web</span>
+</div>
+<div class="relative z-20 flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-[#111] border border-[#222] rounded-lg">
+<span class="material-symbols-outlined text-white">devices</span>
+</div>
+<h3 class="text-lg font-bold uppercase tracking-wider text-white">Landing Pages</h3>
+</div>
+<span class="material-symbols-outlined text-[#333] group-hover:text-white transition-colors">arrow_outward</span>
+</div>
+<div class="relative z-20">
+<p class="text-sm text-[#888] leading-relaxed mb-4">
+                            Creación de sitios web para negocios y uso personal. Uso de Figma y Stitch IA para bocetado rápido y desarrollo frontend optimizado.
+                        </p>
+<div class="flex gap-2">
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">HTML/CSS</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">JS</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Figma</span>
+</div>
+</div>
+</a>
+<a href="https://github.com/nachopalmeri" target="_blank" class="bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group h-auto min-h-[250px] relative overflow-hidden cursor-pointer">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<i class="fa-brands fa-github-alt text-6xl text-white"></i>
+</div>
+<div class="relative z-20 flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-[#111] border border-[#222] rounded-lg">
+<span class="material-symbols-outlined text-white">terminal</span>
+</div>
+<h3 class="text-lg font-bold uppercase tracking-wider text-white">Scripts Diversos</h3>
+</div>
+<span class="material-symbols-outlined text-[#333] group-hover:text-white transition-colors">arrow_outward</span>
+</div>
+<div class="relative z-20">
+<p class="text-sm text-[#888] leading-relaxed mb-4">
+                            Contribuciones a repositorios y scripts de automatización en Bash/Python para optimización de servidores y workflows de desarrollo.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Bash</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Automation</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400">Docker</span>
+</div>
+</div>
+</a>
+</div>
+<div class="md:col-span-8 bento-card rounded-2xl p-6 md:p-8 relative">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-white">history_edu</span>
+<h3 class="text-xl font-bold uppercase tracking-wider text-white">Trayectoria</h3>
+</div>
+<div class="relative space-y-8 pl-4 border-l border-[#222] ml-2">
+<div class="relative pl-6 group">
+<div class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-[#111] border border-[#444] group-hover:bg-white transition-colors"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-1">
+<h4 class="text-lg font-semibold text-white">Grido | Atención al Cliente &amp; Stock</h4>
+<span class="text-xs font-mono text-[#666]">2023 — Presente</span>
+</div>
+<p class="text-sm text-[#888] leading-relaxed">
+                            Resolución eficiente de pedidos y reclamos con altos índices de satisfacción. Manejo de sistemas internos y control de stock mediante Excel.
+                        </p>
+</div>
+<div class="relative pl-6 group">
+<div class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-[#111] border border-[#444] group-hover:bg-white transition-colors"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-1">
+<h4 class="text-lg font-semibold text-white">Editor Multimedia &amp; Content Manager Freelance</h4>
+<span class="text-xs font-mono text-[#666]">2021 — 2023</span>
+</div>
+<p class="text-sm text-[#888] leading-relaxed">
+                            Edición en DaVinci Resolve para formatos largos (YouTube) y cortos verticales (TikTok).
+                        </p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-4">
+<div class="bento-card rounded-2xl p-6 relative overflow-hidden flex-1">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-white text-lg">radio_button_checked</span>
+<h3 class="text-sm font-bold text-white uppercase tracking-wider">ESTADO ACTUAL</h3>
+</div>
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+</span>
+</div>
+<div class="flex flex-col justify-center h-full pb-6">
+<p class="text-text-secondary text-sm font-mono mb-1">Estado:</p>
+<p class="text-white font-medium text-lg leading-tight">Trabajando en: Motor de Automatización Web3</p>
+</div>
+<div class="absolute bottom-4 right-6">
+<p class="text-[10px] text-[#444] font-mono">Última act.: hace 5 min</p>
+</div>
+</div>
+<div class="bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-center items-center text-center relative overflow-hidden flex-1">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#333 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 mx-auto bg-[#111] rounded-full border border-[#333] flex items-center justify-center mb-3 text-white">
+<span class="material-symbols-outlined text-2xl">download</span>
+</div>
+<h3 class="text-base font-bold text-white mb-1">DESCARGAR CV</h3>
+<p class="text-[10px] text-text-secondary mb-3">Versión completa en PDF.</p>
+<a class="inline-block px-3 py-1.5 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded hover:bg-gray-200 transition-colors" href="https://drive.google.com/file/d/1v6buJTsYnZQmrTwHH5fgd5rx2kcT9i2V/view?usp=sharing" target="_blank">
+                            OBTENER PDF
+                        </a>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bento-card rounded-2xl p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-[#111] border border-[#222] rounded-lg">
+<i class="fa-solid fa-graduation-cap text-white"></i>
+</div>
+<span class="text-xs font-mono text-[#444]">EDUCACIÓN</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white">UADE</h3>
+<p class="text-xs text-text-secondary mt-1">Lic. en Gestión de Tecnología de la Información</p>
+</div>
+<div class="mt-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-2xl font-bold text-white display-font">25%</span>
+<span class="text-xs font-mono text-[#666]">EN CURSO</span>
+</div>
+<div class="w-full bg-[#111] rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-white h-1.5 rounded-full" style="width: 25%"></div>
+</div>
+<div class="flex justify-between text-[10px] text-[#555] font-mono">
+<span>PROGRESO: 25%</span>
+<span>10/40 MATERIAS APROBADAS</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bento-card rounded-2xl p-6 relative flex flex-col h-full">
+<div class="mb-5 pb-4 border-b border-[#222] flex justify-between items-start">
+<div>
+<h3 class="text-sm font-bold text-white uppercase tracking-widest mb-1">Lo que estoy aprendiendo</h3>
+<p class="text-xs text-[#666]">Áreas de estudio activo</p>
+</div>
+<div class="flex gap-2">
+<a class="text-[#444] hover:text-white transition-colors" href="https://github.com/nachopalmeri" target="_blank" title="GitHub">
+<i class="fa-brands fa-github text-sm"></i>
+</a>
+<a class="text-[#444] hover:text-[#0077b5] transition-colors" href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" title="LinkedIn">
+<i class="fa-brands fa-linkedin-in text-sm"></i>
+</a>
+</div>
+</div>
+<div class="flex-1 space-y-3">
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-brands fa-linux text-sm text-red-500"></i>
+<span class="text-sm font-bold text-white">Red Hat (Linux)</span>
+</div>
+<span class="text-[10px] font-mono text-[#888] bg-[#111] px-2 py-0.5 rounded border border-[#222]">Certificación (Bases)</span>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-red-600 h-full w-[85%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-brands fa-python text-sm text-yellow-500"></i>
+<span class="text-sm font-bold text-white">Python</span>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-yellow-600 h-full w-[80%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-brain text-sm text-purple-400"></i>
+<span class="text-sm font-bold text-white">AI Tools</span>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-purple-500 h-full w-[65%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-database text-sm text-blue-400"></i>
+<span class="text-sm font-bold text-white">SQL</span>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-blue-500 h-full w-[50%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-brands fa-java text-sm text-orange-500"></i>
+<span class="text-sm font-bold text-white">Java</span>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-orange-600 h-full w-[45%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-table text-sm text-green-600"></i>
+<span class="text-sm font-bold text-white">Excel (Datos)</span>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-green-700 h-full w-[70%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-hashtag text-sm text-pink-500"></i>
+<span class="text-sm font-bold text-white">Algoritmos &amp; Funcionamiento de Redes Sociales</span>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-pink-600 h-full w-[40%]"></div>
+</div>
+</div>
+<div class="bg-[#090909] border border-[#1F1F1F] rounded p-3 hover:border-[#333] transition-colors group">
+<div class="flex justify-between items-center mb-1">
+<div class="flex items-center gap-2">
+<i class="fa-brands fa-bitcoin text-sm text-yellow-300"></i>
+<span class="text-sm font-bold text-white">Web3 &amp; Crypto</span>
+</div>
+<div class="flex items-center gap-3 text-[#888]">
+<span class="material-symbols-outlined text-[16px] hover:text-[#EDEDED] transition-colors cursor-pointer" title="Solidity">deployed_code</span>
+<i class="fa-brands fa-bitcoin text-[16px] hover:text-[#EDEDED] transition-colors cursor-pointer" title="Bitcoin"></i>
+</div>
+</div>
+<div class="w-full bg-[#111] h-1 rounded-full overflow-hidden">
+<div class="bg-yellow-400 h-full w-[35%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#1F1F1F] flex justify-between items-center">
+<span class="text-[10px] font-mono text-[#444] animate-pulse">CONNECTING_TO_SERVERS...</span>
+<div class="flex gap-1">
+<div class="w-1 h-1 bg-green-500 rounded-full animate-ping"></div>
+<div class="w-1 h-1 bg-green-500 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bento-card rounded-2xl p-6 flex flex-col justify-between">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-white">person</span>
+<h3 class="text-sm font-bold text-white uppercase tracking-widest">SOBRE MÍ</h3>
+</div>
+<div class="flex flex-col h-full justify-between">
+<p class="text-sm text-text-secondary leading-relaxed mb-4">
+                        Estudiante de Gestión IT (UADE) y apasionado por la automatización. Combino mi experiencia en atención al cliente y gestión de stock con un enfoque técnico en Python, Linux y Web3. Mi motor es la curiosidad constante y la resolución de problemas bajo presión, buscando siempre optimizar procesos mediante IA y análisis de datos.
+                    </p>
+<div class="p-3 bg-[#111] border border-[#222] rounded-lg mt-auto">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs text-text-secondary">Español</span>
+<span class="text-[10px] font-mono text-white bg-[#000] px-1.5 py-0.5 rounded border border-[#333]">Nativo</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-xs text-text-secondary">Inglés</span>
+<span class="text-[10px] font-mono text-white bg-[#000] px-1.5 py-0.5 rounded border border-[#333]">B1</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-20 py-8 border-t border-[#1F1F1F] text-center md:text-left flex flex-col md:flex-row justify-between items-center text-xs text-[#444]">
+<p>© 2026 IGNACIO PALMERI. INDUSTRIAL DESIGN SYSTEM.</p>
+<div class="mt-2 md:mt-0 flex gap-4">
+<a class="hover:text-white transition-colors" href="#">PRIVACIDAD</a>
+<a class="hover:text-white transition-colors" href="#">TÉRMINOS</a>
+</div>
+</footer>
+</main>
+</body></html>
