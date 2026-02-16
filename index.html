@@ -75,16 +75,37 @@
         }
         
         .bento-card:hover {
-            border-color: #444444;
+            border-color: #555;
             background-color: #0F0F0F;
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
         }
         
         [data-theme="light"] .bento-card:hover {
             border-color: #999;
-            background-color: #ebebeb;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.05);
+            background-color: #f0f0f0;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.1);
+        }
+        
+        /* Soft skill items hover */
+        .soft-skill-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+        
+        .soft-skill-item:hover {
+            transform: translateY(-2px) scale(1.02);
+            border-color: #333;
+            background-color: #151515;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .soft-skill-item:hover .material-symbols-outlined {
+            transform: scale(1.2);
+        }
+        
+        .soft-skill-item .material-symbols-outlined {
+            transition: transform 0.3s ease;
         }
         
         /* Featured card with static gradient border */
@@ -118,11 +139,11 @@
             text-shadow: 0 0 20px rgba(255,255,255,0.1), 0 0 40px rgba(255,255,255,0.05);
         }
         
-        /* Subtle entrance animation */
-        @keyframes slideUp {
+        /* Entrance animations */
+        @keyframes slideUpFade {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -130,13 +151,71 @@
             }
         }
         
-        .animate-in {
-            animation: slideUp 0.5s ease-out forwards;
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
         
-        .delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .animate-slide-up {
+            animation: slideUpFade 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        
+        /* Project cards enhanced hover */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(240,147,251,0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* Icon button hover */
+        .social-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        .social-btn:hover i {
+            transform: scale(1.1);
+        }
+        
+        .social-btn i {
+            transition: transform 0.3s ease;
+        }
         
         /* Button hover effect */
         .cta-button {
@@ -480,7 +559,7 @@
     </nav>
 
 <main class="max-w-7xl mx-auto space-y-6 pt-20">
-<header id="inicio" class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#1F1F1F] pb-8 mb-10">
+<header id="inicio" class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-[#1F1F1F] pb-8 mb-10 animate-slide-up">
 <div class="space-y-4">
 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-[#1F1F1F] bg-[#090909]">
 <span class="relative flex h-2 w-2">
@@ -503,15 +582,15 @@
 </div>
 <div class="flex flex-col md:items-end gap-4 mt-8 md:mt-0">
 <div class="flex items-center gap-3">
-<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group" href="https://github.com/nachopalmeri" target="_blank" aria-label="GitHub">
-<i class="fa-brands fa-github text-lg"></i>
-</a>
-<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 group" href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" aria-label="LinkedIn">
-<i class="fa-brands fa-linkedin-in text-lg"></i>
-</a>
-<button class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group" onclick="copyEmail()" aria-label="Copiar email">
-<i class="fa-solid fa-envelope text-lg"></i>
-</button>
+<a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group social-btn" href="https://github.com/nachopalmeri" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github text-lg"></i>
+            </a>
+            <a class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300 group social-btn" href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in text-lg"></i>
+            </a>
+            <button class="h-10 w-10 flex items-center justify-center border border-[#1F1F1F] bg-[#090909] rounded hover:bg-white hover:text-black hover:border-white transition-all duration-300 group social-btn" onclick="copyEmail()" aria-label="Copiar email">
+                <i class="fa-solid fa-envelope text-lg"></i>
+            </button>
 </div>
 <div class="text-right hidden md:block">
 <p class="text-xs text-[#333] font-mono">BSAS, ARGENTINA</p>
@@ -521,7 +600,7 @@
 </header>
 
 <!-- Proyectos Section -->
-<section id="proyectos" class="mb-8 animate-in">
+<section id="proyectos" class="mb-8 animate-slide-up delay-1">
     <div class="flex items-center gap-3 mb-6">
         <span class="material-symbols-outlined text-white text-2xl">folder</span>
         <h2 class="text-2xl font-bold text-white uppercase tracking-wider">Proyectos</h2>
@@ -653,7 +732,7 @@
 </div>
 </section>
 
-<div id="trayectoria" class="md:col-span-8 bento-card rounded-2xl p-6 md:p-8 relative">
+<div id="trayectoria" class="md:col-span-8 bento-card rounded-2xl p-6 md:p-8 relative animate-slide-up delay-2">
 <div class="flex items-center gap-3 mb-8">
 <span class="material-symbols-outlined text-white">history_edu</span>
 <h3 class="text-xl font-bold uppercase tracking-wider text-white">Trayectoria</h3>
@@ -740,7 +819,7 @@
 </div>
 </div>
 </div>
-<div id="habilidades" class="md:col-span-4 bento-card rounded-2xl p-6 relative flex flex-col h-full">
+<div id="habilidades" class="md:col-span-4 bento-card rounded-2xl p-6 relative flex flex-col h-full animate-slide-up delay-3">
 <div class="mb-5 pb-4 border-b border-[#222] flex justify-between items-start">
 <div>
 <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-1">Lo que estoy aprendiendo</h3>
@@ -861,7 +940,7 @@
 </div>
 </div>
 </div>
-<div id="contacto" class="md:col-span-4 bento-card rounded-2xl p-6 flex flex-col justify-between">
+<div id="contacto" class="md:col-span-4 bento-card rounded-2xl p-6 flex flex-col justify-between animate-slide-up delay-4">
 <div class="flex items-center gap-2 mb-4">
 <span class="material-symbols-outlined text-white">person</span>
 <h3 class="text-sm font-bold text-white uppercase tracking-widest">SOBRE MÍ / CONTACTO</h3>
@@ -891,62 +970,69 @@
 <h3 class="text-sm font-bold text-white uppercase tracking-widest">HABILIDADES BLANDAS</h3>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-green-400 text-xl">groups</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-green-400 text-xl">groups</span>
 <div>
 <p class="text-xs text-white font-semibold">Trabajo en equipo</p>
 <p class="text-[10px] text-[#666]">Colaboración efectiva</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-blue-400 text-xl">chat</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-blue-400 text-xl">chat</span>
 <div>
 <p class="text-xs text-white font-semibold">Comunicación</p>
 <p class="text-[10px] text-[#666]">Clara y efectiva</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-yellow-400 text-xl">lightbulb</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-yellow-400 text-xl">lightbulb</span>
 <div>
 <p class="text-xs text-white font-semibold">Resolución de problemas</p>
 <p class="text-[10px] text-[#666]">Bajo presión</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-purple-400 text-xl">schedule</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-purple-400 text-xl">schedule</span>
 <div>
 <p class="text-xs text-white font-semibold">Gestión del tiempo</p>
 <p class="text-[10px] text-[#666]">Organización</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-orange-400 text-xl">rocket_launch</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-orange-400 text-xl">rocket_launch</span>
 <div>
 <p class="text-xs text-white font-semibold">Proactividad</p>
 <p class="text-[10px] text-[#666]">Toma de iniciativa</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-cyan-400 text-xl">sync</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-cyan-400 text-xl">sync</span>
 <div>
 <p class="text-xs text-white font-semibold">Adaptabilidad</p>
 <p class="text-[10px] text-[#666]">Aprendizaje rápido</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-pink-400 text-xl">psychology_alt</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-pink-400 text-xl">psychology_alt</span>
 <div>
 <p class="text-xs text-white font-semibold">Pensamiento crítico</p>
 <p class="text-[10px] text-[#666]">Análisis profundo</p>
 </div>
 </div>
-<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
-<span class="material-symbols-outlined text-emerald-400 text-xl">target</span>
-<div>
-<p class="text-xs text-white font-semibold">Orientación a resultados</p>
-<p class="text-[10px] text-[#666]">Enfoque en objetivos</p>
-</div>
-</div>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-emerald-400 text-xl">target</span>
+                    <div>
+                        <p class="text-xs text-white font-semibold">Orientación a resultados</p>
+                        <p class="text-[10px] text-[#666]">Enfoque en objetivos</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-red-400 text-xl">verified</span>
+                    <div>
+                        <p class="text-xs text-white font-semibold">Responsabilidad</p>
+                        <p class="text-[10px] text-[#666]">Compromiso total</p>
+                    </div>
+                </div>
 
 <div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
 <span class="material-symbols-outlined text-rose-400 text-xl">search</span>
