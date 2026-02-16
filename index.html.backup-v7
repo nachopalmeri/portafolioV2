@@ -1110,101 +1110,150 @@ DISPONIBLE PARA TRABAJAR
 <span class="material-symbols-outlined text-white">auto_awesome</span>
 <h3 class="text-sm font-bold text-white uppercase tracking-widest">HABILIDADES BLANDAS</h3>
 </div>
-<div class="font-mono text-sm space-y-3">
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Trabajo en equipo</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Colaboración efectiva</span>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-green-400 text-xl">groups</span>
+<div>
+<p class="text-xs text-white font-semibold">Trabajo en equipo</p>
+<p class="text-[10px] text-[#666]">Colaboración efectiva</p>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Comunicación</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Clara y efectiva</span>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Resolución de problemas</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Bajo presión</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-blue-400 text-xl">chat</span>
+<div>
+<p class="text-xs text-white font-semibold">Comunicación</p>
+<p class="text-[10px] text-[#666]">Clara y efectiva</p>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Gestión del tiempo</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Organización</span>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Proactividad</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Toma de iniciativa</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-yellow-400 text-xl">lightbulb</span>
+<div>
+<p class="text-xs text-white font-semibold">Resolución de problemas</p>
+<p class="text-[10px] text-[#666]">Bajo presión</p>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Adaptabilidad</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Aprendizaje rápido</span>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Pensamiento crítico</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Análisis profundo</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-purple-400 text-xl">schedule</span>
+<div>
+<p class="text-xs text-white font-semibold">Gestión del tiempo</p>
+<p class="text-[10px] text-[#666]">Organización</p>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Orientación a resultados</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Enfoque en objetivos</span>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Responsabilidad</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Compromiso total</span>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-orange-400 text-xl">rocket_launch</span>
+<div>
+<p class="text-xs text-white font-semibold">Proactividad</p>
+<p class="text-[10px] text-[#666]">Toma de iniciativa</p>
 </div>
-<div class="flex items-center gap-3 group cursor-default">
-<span class="text-green-400">▸</span>
-<span class="text-white group-hover:text-green-400 transition-colors">Curiosidad</span>
-<span class="text-[#555]">//</span>
-<span class="text-[#666]">Exploración constante</span>
+</div>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-cyan-400 text-xl">sync</span>
+<div>
+<p class="text-xs text-white font-semibold">Adaptabilidad</p>
+<p class="text-[10px] text-[#666]">Aprendizaje rápido</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-pink-400 text-xl">psychology_alt</span>
+<div>
+<p class="text-xs text-white font-semibold">Pensamiento crítico</p>
+<p class="text-[10px] text-[#666]">Análisis profundo</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-emerald-400 text-xl">target</span>
+                    <div>
+                        <p class="text-xs text-white font-semibold">Orientación a resultados</p>
+                        <p class="text-[10px] text-[#666]">Enfoque en objetivos</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg soft-skill-item">
+                    <span class="material-symbols-outlined text-red-400 text-xl">verified</span>
+                    <div>
+                        <p class="text-xs text-white font-semibold">Responsabilidad</p>
+                        <p class="text-[10px] text-[#666]">Compromiso total</p>
+                    </div>
+                </div>
+
+<div class="flex items-center gap-3 p-3 bg-[#111] border border-[#222] rounded-lg">
+<span class="material-symbols-outlined text-rose-400 text-xl">search</span>
+<div>
+<p class="text-xs text-white font-semibold">Curiosidad</p>
+<p class="text-[10px] text-[#666]">Exploración constante</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 
+<!-- SECCIÓN SOBRE MÍ -->
+<section id="sobre-mi" class="py-20 border-t border-[#1F1F1F] animate-slide-up">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Foto y datos -->
+            <div class="text-center md:text-left">
+                <div class="mb-6 relative">
+                    <div class="w-40 h-40 mx-auto md:mx-0 bg-gradient-to-br from-[#4f46e5] via-[#7c3aed] to-[#ec4899] rounded-full flex items-center justify-center text-6xl relative z-10">
+                        👨‍💻
+                    </div>
+                    <div class="absolute inset-0 w-40 h-40 mx-auto md:mx-0 bg-gradient-to-br from-[#4f46e5] to-[#ec4899] rounded-full blur-2xl opacity-40"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Sobre Mí</h2>
+                <p class="text-[#A1A1A1] mb-6 leading-relaxed">
+                    Estudiante de Gestión de Tecnología de la Información en UADE. Apasionado por la tecnología, el desarrollo web y las criptomonedas. Siempre aprendiendo algo nuevo.
+                </p>
+                
+                <!-- Certificado visible -->
+                <div class="mb-6">
+                    <a href="https://www.credly.com/badges/761f7f8d-41c7-4e1e-8dda-1e29830e4e85" target="_blank" class="cert-badge">
+                        <i class="fab fa-redhat"></i>
+                        <span>Red Hat Certified</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-6">Mi Trayectoria</h3>
+                <div class="space-y-6">
+                    <div class="timeline-item">
+                        <h4 class="text-white font-semibold">2025 - Presente</h4>
+                        <p class="text-[#A1A1A1] text-sm">Lic. en Gestión de Tecnología de la Información - UADE</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="text-white font-semibold">2024</h4>
+                        <p class="text-[#A1A1A1] text-sm">Red Hat Certified - Linux Administration</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4 class="text-white font-semibold">2018 - 2024</h4>
+                        <p class="text-[#A1A1A1] text-sm">Secundario orientado a Economía</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ESTADÍSTICAS ANIMADAS -->
 <section class="py-16 border-t border-[#1F1F1F]">
     <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display animate-slide-up">Mis Números</h2>
-        <div class="font-mono text-left max-w-2xl mx-auto bg-[#0d0d0d] rounded-xl p-6 border border-[#1a1a1a]">
-            <div class="space-y-4">
-                <div class="flex items-center gap-4">
-                    <span class="text-green-400">$</span>
-                    <span class="text-white">proyectos_completados</span>
-                    <span class="text-[#555]">=</span>
-                    <span class="text-green-400 font-bold">4</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span class="text-green-400">$</span>
-                    <span class="text-white">tecnologias</span>
-                    <span class="text-[#555]">=</span>
-                    <span class="text-blue-400 font-bold">10+</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span class="text-green-400">$</span>
-                    <span class="text-white">anos_experiencia</span>
-                    <span class="text-[#555]">=</span>
-                    <span class="text-yellow-400 font-bold">2</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <span class="text-green-400">$</span>
-                    <span class="text-white">dedicacion</span>
-                    <span class="text-[#555]">=</span>
-                    <span class="text-purple-400 font-bold">100%</span>
-                </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="stat-card">
+                <div class="stats-counter" data-target="4">0</div>
+                <p class="text-[#A1A1A1] text-sm mt-2">Proyectos Completados</p>
+            </div>
+            <div class="stat-card">
+                <div class="stats-counter" data-target="2">0</div>
+                <p class="text-[#A1A1A1] text-sm mt-2">Años Aprendiendo</p>
+            </div>
+            <div class="stat-card">
+                <div class="stats-counter" data-target="10">0</div>
+                <p class="text-[#A1A1A1] text-sm mt-2">Tecnologías</p>
+            </div>
+            <div class="stat-card">
+                <div class="stats-counter" data-target="100">0</div>
+                <p class="text-[#A1A1A1] text-sm mt-2">% Dedicación</p>
             </div>
         </div>
     </div>
@@ -1214,36 +1263,30 @@ DISPONIBLE PARA TRABAJAR
 <section class="py-16 border-t border-[#1F1F1F]">
     <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display animate-slide-up">Tech Stack</h2>
-        <div class="flex flex-wrap justify-center gap-6">
-            <div class="flex flex-col items-center gap-2 group cursor-default">
-                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-green-500/50 group-hover:bg-[#1a1a1a] transition-all">🐍</div>
-                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">Python</span>
-                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-green-500 h-full" style="width: 85%"></div></div>
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <div class="tech-stack-item animate-scale-in delay-1">
+                <div class="tech-stack-icon">🐍</div>
+                <span class="text-xs text-[#A1A1A1]">Python</span>
             </div>
-            <div class="flex flex-col items-center gap-2 group cursor-default">
-                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-red-500/50 group-hover:bg-[#1a1a1a] transition-all">🐧</div>
-                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">Linux</span>
-                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-red-500 h-full" style="width: 80%"></div></div>
+            <div class="tech-stack-item animate-scale-in delay-2">
+                <div class="tech-stack-icon">🐧</div>
+                <span class="text-xs text-[#A1A1A1]">Linux</span>
             </div>
-            <div class="flex flex-col items-center gap-2 group cursor-default">
-                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-purple-500/50 group-hover:bg-[#1a1a1a] transition-all">⛓️</div>
-                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">Web3</span>
-                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-purple-500 h-full" style="width: 45%"></div></div>
+            <div class="tech-stack-item animate-scale-in delay-3">
+                <div class="tech-stack-icon">⛓️</div>
+                <span class="text-xs text-[#A1A1A1]">Web3</span>
             </div>
-            <div class="flex flex-col items-center gap-2 group cursor-default">
-                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-orange-500/50 group-hover:bg-[#1a1a1a] transition-all">🌐</div>
-                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">HTML/CSS</span>
-                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-orange-500 h-full" style="width: 90%"></div></div>
+            <div class="tech-stack-item animate-scale-in delay-4">
+                <div class="tech-stack-icon">🌐</div>
+                <span class="text-xs text-[#A1A1A1]">HTML/CSS</span>
             </div>
-            <div class="flex flex-col items-center gap-2 group cursor-default">
-                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-yellow-500/50 group-hover:bg-[#1a1a1a] transition-all">⚡</div>
-                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">JavaScript</span>
-                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-yellow-500 h-full" style="width: 65%"></div></div>
+            <div class="tech-stack-item animate-scale-in delay-1">
+                <div class="tech-stack-icon">⚡</div>
+                <span class="text-xs text-[#A1A1A1]">JavaScript</span>
             </div>
-            <div class="flex flex-col items-center gap-2 group cursor-default">
-                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-blue-500/50 group-hover:bg-[#1a1a1a] transition-all">🗄️</div>
-                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">SQL</span>
-                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-blue-500 h-full" style="width: 55%"></div></div>
+            <div class="tech-stack-item animate-scale-in delay-2">
+                <div class="tech-stack-icon">🗄️</div>
+                <span class="text-xs text-[#A1A1A1]">SQL</span>
             </div>
         </div>
     </div>
@@ -1270,62 +1313,42 @@ DISPONIBLE PARA TRABAJAR
             </a>
         </div>
         
-        <!-- Formulario de contacto estilo terminal -->
-        <div class="max-w-lg mx-auto animate-slide-up delay-3">
-            <div class="bg-[#0d0d0d] rounded-xl border border-[#1a1a1a] overflow-hidden">
-                <div class="flex items-center gap-2 px-4 py-3 bg-[#111] border-b border-[#1a1a1a]">
-                    <span class="terminal-dot red"></span>
-                    <span class="terminal-dot yellow"></span>
-                    <span class="terminal-dot green"></span>
-                    <span class="ml-2 text-xs text-[#555] font-mono">contact_form.sh</span>
-                </div>
-                <form action="https://formspree.io/f/mvzbajwb" method="POST" class="p-4 space-y-4">
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-400 font-mono text-sm">$</span>
-                        <span class="text-[#555] font-mono text-sm">name</span>
-                        <input type="text" name="name" required class="flex-1 bg-transparent border-b border-[#222] text-white px-2 py-1 focus:border-green-500 focus:outline-none font-mono text-sm">
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-400 font-mono text-sm">$</span>
-                        <span class="text-[#555] font-mono text-sm">email</span>
-                        <input type="email" name="email" required class="flex-1 bg-transparent border-b border-[#222] text-white px-2 py-1 focus:border-green-500 focus:outline-none font-mono text-sm">
-                    </div>
-                    <div class="flex items-start gap-2">
-                        <span class="text-green-400 font-mono text-sm mt-1">$</span>
-                        <span class="text-[#555] font-mono text-sm mt-1">message</span>
-                        <textarea name="message" rows="3" required class="flex-1 bg-transparent border-b border-[#222] text-white px-2 py-1 focus:border-green-500 focus:outline-none font-mono text-sm resize-none"></textarea>
-                    </div>
-                    <button type="submit" class="w-full mt-4 py-2 bg-green-500/10 border border-green-500/30 text-green-400 font-mono text-sm rounded hover:bg-green-500/20 hover:border-green-500/50 transition-all">
-                        > ./send_message.sh
-                    </button>
-                </form>
+        <!-- Formulario de contacto - usa Formspree o servicio similar -->
+        <form action="https://formspree.io/f/mvzbajwb" method="POST" class="contact-form max-w-lg mx-auto text-left animate-slide-up delay-3">
+            <div class="mb-4 space-y-4">
+                <input type="text" name="name" placeholder="Tu nombre" required class="w-full px-4 py-3 bg-[#111] border border-[#222] rounded-lg text-white placeholder-[#666] focus:border-[#667eea] focus:outline-none transition-colors">
+                <input type="email" name="email" placeholder="Tu email" required class="w-full px-4 py-3 bg-[#111] border border-[#222] rounded-lg text-white placeholder-[#666] focus:border-[#667eea] focus:outline-none transition-colors">
+                <textarea name="message" rows="4" placeholder="Tu mensaje..." required class="w-full px-4 py-3 bg-[#111] border border-[#222] rounded-lg text-white placeholder-[#666] focus:border-[#667eea] focus:outline-none transition-colors"></textarea>
             </div>
-        </div>
+            <button type="submit" class="w-full py-3 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white font-bold rounded-lg hover:opacity-90 transition-all hover:scale-[1.02]">
+                Enviar Mensaje
+            </button>
+        </form>
     </div>
 </section>
 
-<footer class="bg-black border-t border-[#1F1F1F] py-6">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <span class="text-white font-bold">© 2026 IGNACIO PALMERI</span>
-                <span class="text-[#555] hidden md:inline">|</span>
-                <span class="text-[#555] hidden md:inline tracking-widest text-xs">BUILDING THE FUTURE</span>
+<footer class="bg-black text-light pt-5 pb-4 border-top border-secondary">
+            <div class="container">
+                <div class="row align-items-center justify-content-between text-center">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0">
+                        <span class="text-white fw-bold">© 2026 IGNACIO PALMERI</span>
+                        <span class="text-secondary ms-2 d-none d-md-inline">|</span>
+                        <span class="text-secondary ms-2 d-none d-md-inline" style="letter-spacing: 2px;">BUILDING THE FUTURE</span>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3 mb-md-0">
+                        <a href="#inicio" class="text-secondary text-decoration-none me-3">Inicio</a>
+                        <a href="#proyectos" class="text-secondary text-decoration-none me-3">Proyectos</a>
+                        <a href="#habilidades" class="text-secondary text-decoration-none me-3">Habilidades</a>
+                        <a href="#trayectoria" class="text-secondary text-decoration-none">Trayectoria</a>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="https://github.com/nachopalmeri" target="_blank" class="text-secondary text-decoration-none me-3" aria-label="GitHub"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" class="text-secondary text-decoration-none me-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <button onclick="copyEmail()" class="text-secondary text-decoration-none border-0 bg-transparent" aria-label="Copiar email"><i class="fas fa-envelope fa-lg"></i></button>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center gap-6">
-                <a href="#inicio" class="text-[#555] hover:text-white transition-colors text-sm">Inicio</a>
-                <a href="#proyectos" class="text-[#555] hover:text-white transition-colors text-sm">Proyectos</a>
-                <a href="#habilidades" class="text-[#555] hover:text-white transition-colors text-sm">Habilidades</a>
-                <a href="#trayectoria" class="text-[#555] hover:text-white transition-colors text-sm">Trayectoria</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="https://github.com/nachopalmeri" target="_blank" aria-label="GitHub" class="text-[#555] hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
-                <a href="https://www.linkedin.com/in/ignacio-palmeri-64035b378/" target="_blank" aria-label="LinkedIn" class="text-[#555] hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
-                <button onclick="copyEmail()" aria-label="Copiar email" class="text-[#555] hover:text-white transition-colors border-0 bg-transparent"><i class="fas fa-envelope fa-lg"></i></button>
-            </div>
-        </div>
-    </div>
-</footer>
+        </footer>
 </main>
 
 <script>
