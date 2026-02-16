@@ -219,45 +219,11 @@
         
         /* Button hover effect */
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #f8b530 0%, #f66a3a 100%);
-            color: #000;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(248, 181, 48, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(248, 181, 48, 0.4);
-        }
-        
-        .cta-button-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border: 1px solid #333;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-        
-        .cta-button-secondary:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
         
         /* Icon rotation on hover */
@@ -401,14 +367,12 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
         
         .stat-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: #555;
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(102,126,234,0.1);
-        }
+            transform: translateY(-4px);
+            border-color: #444;
         }
         
         .tech-stack-item {
@@ -461,9 +425,25 @@
             border-left: 2px solid transparent;
         }
         
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #f8b530 0%, #f66a3a 100%);
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(248, 181, 48, 0.3);
+        }
+        
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(248, 181, 48, 0.4);
+            gap: 1rem;
         }
         
         .contact-form input,
@@ -1066,7 +1046,7 @@
 </div>
 
 <!-- SECCIÓN SOBRE MÍ -->
-<section id="sobre-mi" class="py-20 border-t border-[#1F1F1F] animate-slide-up">
+<section id="sobre-mi" class="py-20 border-t border-[#1F1F1F]">
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <!-- Foto y datos -->
@@ -1115,7 +1095,7 @@
 <!-- ESTADÍSTICAS ANIMADAS -->
 <section class="py-16 border-t border-[#1F1F1F]">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display animate-slide-up">Mis Números</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display">Mis Números</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="stat-card">
                 <div class="stats-counter" data-target="4">0</div>
@@ -1140,29 +1120,29 @@
 <!-- TECH STACK VISUAL -->
 <section class="py-16 border-t border-[#1F1F1F]">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display animate-slide-up">Tech Stack</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display">Tech Stack</h2>
         <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
-            <div class="tech-stack-item animate-scale-in delay-1">
+            <div class="tech-stack-item">
                 <div class="tech-stack-icon">🐍</div>
                 <span class="text-xs text-[#A1A1A1]">Python</span>
             </div>
-            <div class="tech-stack-item animate-scale-in delay-2">
+            <div class="tech-stack-item">
                 <div class="tech-stack-icon">🐧</div>
                 <span class="text-xs text-[#A1A1A1]">Linux</span>
             </div>
-            <div class="tech-stack-item animate-scale-in delay-3">
+            <div class="tech-stack-item">
                 <div class="tech-stack-icon">⛓️</div>
                 <span class="text-xs text-[#A1A1A1]">Web3</span>
             </div>
-            <div class="tech-stack-item animate-scale-in delay-4">
+            <div class="tech-stack-item">
                 <div class="tech-stack-icon">🌐</div>
                 <span class="text-xs text-[#A1A1A1]">HTML/CSS</span>
             </div>
-            <div class="tech-stack-item animate-scale-in delay-1">
+            <div class="tech-stack-item">
                 <div class="tech-stack-icon">⚡</div>
                 <span class="text-xs text-[#A1A1A1]">JavaScript</span>
             </div>
-            <div class="tech-stack-item animate-scale-in delay-2">
+            <div class="tech-stack-item">
                 <div class="tech-stack-icon">🗄️</div>
                 <span class="text-xs text-[#A1A1A1]">SQL</span>
             </div>
@@ -1175,30 +1155,30 @@
 <!-- CTA Y CONTACTO -->
 <section class="py-20 border-t border-[#1F1F1F]">
     <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display animate-slide-up">¿Trabajamos Juntos?</h2>
-        <p class="text-[#A1A1A1] mb-8 max-w-2xl mx-auto animate-slide-up delay-1">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-display">¿Trabajamos Juntos?</h2>
+        <p class="text-[#A1A1A1] mb-8 max-w-2xl mx-auto">
             Estoy buscando mi primera oportunidad como Trainee/Junior en desarrollo, Python, Web3 o gestión de datos.
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up delay-2">
-            <a href="mailto:ignaciopalmeri1@gmail.com?subject=Contacto desde Portfolio" class="cta-button group">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="mailto:ignaciopalmeri1@gmail.com" class="cta-button">
                 <span>Contactarme</span>
-                <span class="material-symbols-outlined rotate-icon transition-transform group-hover:-translate-x-1">send</span>
+                <span class="material-symbols-outlined rotate-icon transition-transform">send</span>
             </a>
-            <a href="https://drive.google.com/file/d/1v6buJTsYnZQmrTwHH5fgd5rx2kcT9i2V/view?usp=sharing" target="_blank" class="cta-button-secondary group">
+            <a href="https://drive.google.com/file/d/1v6buJTsYnZQmrTwHH5fgd5rx2kcT9i2V/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-[#333] rounded-full text-white hover:bg-white hover:text-black transition-all">
+                <i class="fas fa-download"></i>
                 <span>Descargar CV</span>
-                <i class="fas fa-download transition-transform group-hover:translate-y-1"></i>
             </a>
         </div>
         
-        <!-- Formulario de contacto - usa Formspree o servicio similar -->
-        <form action="https://formspree.io/f/xpwzgvjq" method="POST" class="contact-form max-w-lg mx-auto text-left animate-slide-up delay-3">
-            <div class="mb-4 space-y-4">
-                <input type="text" name="name" placeholder="Tu nombre" required class="w-full px-4 py-3 bg-[#111] border border-[#222] rounded-lg text-white placeholder-[#666] focus:border-[#667eea] focus:outline-none transition-colors">
-                <input type="email" name="email" placeholder="Tu email" required class="w-full px-4 py-3 bg-[#111] border border-[#222] rounded-lg text-white placeholder-[#666] focus:border-[#667eea] focus:outline-none transition-colors">
-                <textarea name="message" rows="4" placeholder="Tu mensaje..." required class="w-full px-4 py-3 bg-[#111] border border-[#222] rounded-lg text-white placeholder-[#666] focus:border-[#667eea] focus:outline-none transition-colors"></textarea>
+        <!-- Formulario de contacto simple -->
+        <form class="contact-form max-w-lg mx-auto text-left" onsubmit="event.preventDefault(); showToast('Mensaje enviado! Te contactaré pronto.');">
+            <div class="mb-4">
+                <input type="text" placeholder="Tu nombre" required class="mb-3">
+                <input type="email" placeholder="Tu email" required class="mb-3">
+                <textarea rows="4" placeholder="Tu mensaje..." required></textarea>
             </div>
-            <button type="submit" class="w-full py-3 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white font-bold rounded-lg hover:opacity-90 transition-all hover:scale-[1.02]">
+            <button type="submit" class="w-full py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all">
                 Enviar Mensaje
             </button>
         </form>
