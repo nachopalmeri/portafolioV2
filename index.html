@@ -1103,15 +1103,15 @@ DISPONIBLE PARA TRABAJAR
 <!-- Combined Skills, Tech & Stats Section -->
 <div class="md:col-span-12 mt-4">
 <div class="bento-card rounded-2xl p-6 md:p-8 h-auto">
-<div class="flex items-center gap-2 mb-6 overflow-x-auto font-mono text-sm">
+<div class="flex items-center gap-2 mb-6 overflow-x-auto">
 <button onclick="switchTab('soft-skills')" class="tab-btn active" data-tab="soft-skills">
-<span class="text-green-400">></span> skills
+<span class="text-green-400">▸</span> <span class="mr-1">🎯</span>Skills
 </button>
 <button onclick="switchTab('tech-stack')" class="tab-btn" data-tab="tech-stack">
-<span class="text-green-400">></span> stack
+<span class="text-green-400">▸</span> <span class="mr-1">💻</span>Stack
 </button>
 <button onclick="switchTab('stats')" class="tab-btn" data-tab="stats">
-<span class="text-green-400">></span> stats
+<span class="text-green-400">▸</span> <span class="mr-1">📊</span>Stats
 </button>
 </div>
 
@@ -1219,20 +1219,21 @@ DISPONIBLE PARA TRABAJAR
 .tab-btn {
 display: inline-flex;
 align-items: center;
+gap: 0.25rem;
 padding: 0.5rem 1rem;
 background: transparent;
 border: 1px solid #1a1a1a;
-border-radius: 4px;
+border-radius: 6px;
 color: #555;
-font-size: 0.75rem;
-transition: all 0.2s ease;
+font-size: 0.8rem;
+transition: all 0.3s ease;
 cursor: pointer;
 white-space: nowrap;
 }
 .tab-btn:hover {
 border-color: #22c55e;
 color: #fff;
-background: rgba(34,197,94,0.05);
+background: rgba(34,197,94,0.08);
 }
 .tab-btn.active {
 background: #111;
@@ -1243,9 +1244,22 @@ color: #fff;
 
 <script>
 function switchTab(tabName) {
-document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+document.querySelectorAll('.tab-content').forEach(tab => {
+tab.style.opacity = '0';
+setTimeout(() => {
+tab.classList.add('hidden');
+}, 150);
+});
 document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-document.getElementById(tabName).classList.remove('hidden');
+setTimeout(() => {
+const selectedTab = document.getElementById(tabName);
+selectedTab.classList.remove('hidden');
+selectedTab.style.opacity = '0';
+setTimeout(() => {
+selectedTab.style.opacity = '1';
+selectedTab.style.transition = 'opacity 0.3s ease';
+}, 50);
+}, 200);
 document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
 }
 </script>
