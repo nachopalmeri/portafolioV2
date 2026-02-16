@@ -118,6 +118,40 @@
             text-shadow: 0 0 20px rgba(255,255,255,0.1), 0 0 40px rgba(255,255,255,0.05);
         }
         
+        /* Subtle entrance animation */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: slideUp 0.5s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        
+        /* Button hover effect */
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Icon rotation on hover */
+        .cta-button:hover .rotate-icon {
+            transform: rotate(-45deg);
+        }
+        
         /* Magnetic button effect */
         .magnetic-btn {
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -127,25 +161,14 @@
             transform: scale(1.05);
         }
         
-        /* Shimmer effect for tags */
+        /* Subtle tag hover */
         .tech-tag {
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s ease;
         }
         
-        .tech-tag::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .tech-tag:hover::after {
-            left: 100%;
+        .tech-tag:hover {
+            border-color: #666;
+            color: #fff;
         }
         
         /* Progress bar animation */
@@ -498,7 +521,7 @@
 </header>
 
 <!-- Proyectos Section -->
-<section id="proyectos" class="mb-8">
+<section id="proyectos" class="mb-8 animate-in">
     <div class="flex items-center gap-3 mb-6">
         <span class="material-symbols-outlined text-white text-2xl">folder</span>
         <h2 class="text-2xl font-bold text-white uppercase tracking-wider">Proyectos</h2>
@@ -1054,7 +1077,7 @@
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a href="mailto:ignaciopalmeri1@gmail.com" class="cta-button">
                 <span>Contactarme</span>
-                <span class="material-symbols-outlined">send</span>
+                <span class="material-symbols-outlined rotate-icon transition-transform">send</span>
             </a>
             <a href="https://drive.google.com/file/d/1v6buJTsYnZQmrTwHH5fgd5rx2kcT9i2V/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-[#333] rounded-full text-white hover:bg-white hover:text-black transition-all">
                 <i class="fas fa-download"></i>
