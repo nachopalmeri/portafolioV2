@@ -108,11 +108,7 @@
             border-color: #333;
             background-color: #0d0d0d;
             transform: translateY(-4px);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), 0 0 30px rgba(34,197,94,0.1);
-        }
-        
-        .bento-card.featured:hover {
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), 0 0 40px rgba(34,197,94,0.15);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
         }
         
         [data-theme="light"] .bento-card:hover {
@@ -805,48 +801,72 @@ DISPONIBLE PARA TRABAJAR
 </div>
 </div>
 </a>
-<div class="md:col-span-6">
-<a href="https://prodesol.vercel.app/" target="_blank" class="bento-card featured rounded-2xl p-6 md:p-8 flex flex-col justify-between group relative overflow-hidden h-[300px] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#090909] to-[#000000]"></div>
-<div class="relative z-20 flex justify-between items-start">
-<div class="flex items-center gap-2">
-<span class="terminal-dot red"></span>
-<span class="terminal-dot yellow"></span>
-<span class="terminal-dot green"></span>
+<div class="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+<a href="https://prodesol.vercel.app/" target="_blank" class="bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group h-auto min-h-[250px] relative overflow-hidden cursor-pointer">
+<div class="absolute top-10 right-[-20px] w-[80%] h-[80%] opacity-20 group-hover:opacity-30 transition-opacity transform rotate-3 z-0 border border-[#333] bg-[#111] rounded-xl overflow-hidden">
+<div class="w-full h-8 border-b border-[#333] bg-[#000] flex items-center px-2 gap-1">
+<div class="w-2 h-2 rounded-full bg-[#333]"></div>
+<div class="w-2 h-2 rounded-full bg-[#333]"></div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2">
+<div class="h-16 bg-[#222] rounded"></div>
+<div class="h-16 bg-[#222] rounded"></div>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-white">token</span>
+</div>
+<div class="relative z-20 flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-[#111] border border-[#222] rounded-lg">
+<span class="material-symbols-outlined text-white">deployed_code</span>
+</div>
+<h3 class="text-lg font-bold uppercase tracking-wider text-white">DApp Registro Blockchain</h3>
 </div>
 <span class="material-symbols-outlined text-[#333] group-hover:text-white transition-colors">arrow_outward</span>
 </div>
-<div class="relative z-20 mt-auto">
-<h3 class="text-xl font-bold text-white mb-2">DApp Registro Blockchain</h3>
-<p class="text-[#888] text-sm mb-3">Aplicación descentralizada en Base Network para registros inmutables mediante Smart Contracts.</p>
-<div class="flex gap-2 flex-wrap">
+<div class="relative z-20">
+<p class="text-sm text-[#888] leading-relaxed mb-4">
+                            Aplicación descentralizada en Base Network para registros inmutables mediante Smart Contracts. Sistema de verificación on-chain.
+                        </p>
+<div class="flex gap-2">
 <span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">Solidity</span>
-<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">Web3</span>
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">Web3.py</span>
 <span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">Base</span>
 </div>
 </div>
 </a>
+<a href="https://portafolioignaciopalmeri.vercel.app/hub.html" target="_blank" class="bento-card rounded-2xl p-6 md:p-8 flex flex-col justify-between group h-auto min-h-[250px] relative overflow-hidden cursor-pointer">
+<div class="absolute top-10 right-[-20px] w-[80%] h-[80%] opacity-20 group-hover:opacity-30 transition-opacity transform rotate-3 z-0 border border-[#333] bg-[#111] rounded-xl overflow-hidden">
+<div class="w-full h-8 border-b border-[#333] bg-[#000] flex items-center px-2 gap-1">
+<div class="w-2 h-2 rounded-full bg-[#333]"></div>
+<div class="w-2 h-2 rounded-full bg-[#333]"></div>
 </div>
-<div class="md:col-span-6">
-<a href="https://portafolioignaciopalmeri.vercel.app/hub.html" target="_blank" class="bento-card featured rounded-2xl p-6 md:p-8 flex flex-col justify-between group relative overflow-hidden h-[300px] cursor-pointer">
-<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#1a1a1a] via-[#090909] to-[#000000]"></div>
-<div class="relative z-20 flex justify-between items-start">
-<div class="flex items-center gap-2">
-<span class="terminal-dot red"></span>
-<span class="terminal-dot yellow"></span>
-<span class="terminal-dot green"></span>
+<div class="p-4 grid grid-cols-2 gap-2">
+<div class="h-16 bg-[#222] rounded"></div>
+<div class="h-16 bg-[#222] rounded"></div>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<i class="fa-brands fa-github-alt text-6xl text-white"></i>
+</div>
+<div class="relative z-20 flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-[#111] border border-[#222] rounded-lg">
+<span class="material-symbols-outlined text-white">folder_special</span>
+</div>
+<h3 class="text-lg font-bold uppercase tracking-wider text-white">Proyectos Web</h3>
 </div>
 <span class="material-symbols-outlined text-[#333] group-hover:text-white transition-colors">arrow_outward</span>
 </div>
-<div class="relative z-20 mt-auto">
-<h3 class="text-xl font-bold text-white mb-2">Proyectos Web</h3>
-<p class="text-[#888] text-sm mb-3">Colección de proyectos web: Comida de Barrio, landing pages y más.</p>
-<div class="flex gap-2 flex-wrap">
+<div class="relative z-20">
+<p class="text-sm text-[#888] leading-relaxed mb-4">
+                            Colección de proyectos web: Comida de Barrio, landing pages y más. Desarrollo frontend con HTML, CSS, JavaScript y Bootstrap.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">Bootstrap</span>
 <span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">HTML/CSS</span>
 <span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">JavaScript</span>
-<span class="px-2 py-1 text-xs font-mono border border-[#333] rounded text-gray-400 tech-tag">Bootstrap</span>
 </div>
 </div>
 </a>
@@ -1193,51 +1213,37 @@ DISPONIBLE PARA TRABAJAR
 <!-- TECH STACK VISUAL -->
 <section class="py-16 border-t border-[#1F1F1F]">
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 font-display animate-slide-up">~/tech-stack</h2>
-        <div class="bg-[#0d0d0d] rounded-xl p-6 border border-[#1a1a1a] font-mono text-sm">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
-                <div class="flex items-center gap-3 group cursor-default">
-                    <span class="text-green-400">▸</span>
-                    <span class="text-white group-hover:text-green-400 transition-colors">python</span>
-                    <span class="text-[#555]">|</span>
-                    <span class="text-blue-400">85%</span>
-                    <div class="flex-1 h-1 bg-[#111] rounded-full overflow-hidden"><div class="bg-green-500 h-full group-hover:bg-green-400 transition-colors" style="width: 85%"></div></div>
-                </div>
-                <div class="flex items-center gap-3 group cursor-default">
-                    <span class="text-green-400">▸</span>
-                    <span class="text-white group-hover:text-green-400 transition-colors">linux</span>
-                    <span class="text-[#555]">|</span>
-                    <span class="text-blue-400">80%</span>
-                    <div class="flex-1 h-1 bg-[#111] rounded-full overflow-hidden"><div class="bg-red-500 h-full group-hover:bg-red-400 transition-colors" style="width: 80%"></div></div>
-                </div>
-                <div class="flex items-center gap-3 group cursor-default">
-                    <span class="text-green-400">▸</span>
-                    <span class="text-white group-hover:text-green-400 transition-colors">web3</span>
-                    <span class="text-[#555]">|</span>
-                    <span class="text-blue-400">45%</span>
-                    <div class="flex-1 h-1 bg-[#111] rounded-full overflow-hidden"><div class="bg-purple-500 h-full group-hover:bg-purple-400 transition-colors" style="width: 45%"></div></div>
-                </div>
-                <div class="flex items-center gap-3 group cursor-default">
-                    <span class="text-green-400">▸</span>
-                    <span class="text-white group-hover:text-green-400 transition-colors">html/css</span>
-                    <span class="text-[#555]">|</span>
-                    <span class="text-blue-400">90%</span>
-                    <div class="flex-1 h-1 bg-[#111] rounded-full overflow-hidden"><div class="bg-orange-500 h-full group-hover:bg-orange-400 transition-colors" style="width: 90%"></div></div>
-                </div>
-                <div class="flex items-center gap-3 group cursor-default">
-                    <span class="text-green-400">▸</span>
-                    <span class="text-white group-hover:text-green-400 transition-colors">javascript</span>
-                    <span class="text-[#555]">|</span>
-                    <span class="text-blue-400">65%</span>
-                    <div class="flex-1 h-1 bg-[#111] rounded-full overflow-hidden"><div class="bg-yellow-500 h-full group-hover:bg-yellow-400 transition-colors" style="width: 65%"></div></div>
-                </div>
-                <div class="flex items-center gap-3 group cursor-default">
-                    <span class="text-green-400">▸</span>
-                    <span class="text-white group-hover:text-green-400 transition-colors">sql</span>
-                    <span class="text-[#555]">|</span>
-                    <span class="text-blue-400">55%</span>
-                    <div class="flex-1 h-1 bg-[#111] rounded-full overflow-hidden"><div class="bg-blue-500 h-full group-hover:bg-blue-400 transition-colors" style="width: 55%"></div></div>
-                </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 text-center font-display animate-slide-up">Tech Stack</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="flex flex-col items-center gap-2 group cursor-default">
+                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-green-500/50 group-hover:bg-[#1a1a1a] transition-all">🐍</div>
+                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">Python</span>
+                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-green-500 h-full" style="width: 85%"></div></div>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-default">
+                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-red-500/50 group-hover:bg-[#1a1a1a] transition-all">🐧</div>
+                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">Linux</span>
+                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-red-500 h-full" style="width: 80%"></div></div>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-default">
+                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-purple-500/50 group-hover:bg-[#1a1a1a] transition-all">⛓️</div>
+                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">Web3</span>
+                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-purple-500 h-full" style="width: 45%"></div></div>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-default">
+                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-orange-500/50 group-hover:bg-[#1a1a1a] transition-all">🌐</div>
+                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">HTML/CSS</span>
+                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-orange-500 h-full" style="width: 90%"></div></div>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-default">
+                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-yellow-500/50 group-hover:bg-[#1a1a1a] transition-all">⚡</div>
+                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">JavaScript</span>
+                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-yellow-500 h-full" style="width: 65%"></div></div>
+            </div>
+            <div class="flex flex-col items-center gap-2 group cursor-default">
+                <div class="w-16 h-16 rounded-xl bg-[#111] border border-[#222] flex items-center justify-center text-2xl group-hover:border-blue-500/50 group-hover:bg-[#1a1a1a] transition-all">🗄️</div>
+                <span class="text-xs text-[#A1A1A1] group-hover:text-white transition-colors">SQL</span>
+                <div class="w-16 bg-[#111] h-1 rounded-full overflow-hidden"><div class="bg-blue-500 h-full" style="width: 55%"></div></div>
             </div>
         </div>
     </div>
