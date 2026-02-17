@@ -48,19 +48,23 @@
         :root {
             --bg-primary: #000000;
             --bg-secondary: #0a0a0a;
+            --bg-card: rgba(10, 10, 10, 0.6);
             --border-color: #1a1a1a;
             --text-primary: #f5f5f5;
             --text-secondary: #a3a3a3;
             --accent-primary: #22c55e;
             --accent-secondary: #4f46e5;
+            --particle-color: rgba(34, 197, 94, 0.4);
         }
         
         [data-theme="light"] {
             --bg-primary: #fafafa;
             --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.8);
             --border-color: #e5e5e5;
             --text-primary: #171717;
             --text-secondary: #525252;
+            --particle-color: rgba(34, 197, 94, 0.2);
         }
         
         body {
@@ -69,6 +73,160 @@
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        [data-theme="light"] .particle {
+            background: rgba(34, 197, 94, 0.3);
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 100;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+            transform: scale(1.1);
+            border-color: var(--accent-primary);
+        }
+        
+        /* GitHub Contributions Grid */
+        .contributions-grid {
+            display: grid;
+            grid-template-columns: repeat(52, 1fr);
+            gap: 3px;
+        }
+        
+        .contribution-cell {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: var(--border-color);
+            transition: all 0.2s ease;
+        }
+        
+        .contribution-cell[data-level="1"] { background: #0e4429; }
+        .contribution-cell[data-level="2"] { background: #006d32; }
+        .contribution-cell[data-level="3"] { background: #26a641; }
+        .contribution-cell[data-level="4"] { background: #39d353; }
+        
+        .contribution-cell:hover {
+            transform: scale(1.5);
+        }
+        
+        [data-theme="light"] .contribution-cell { background: #e5e5e5; }
+        [data-theme="light"] .contribution-cell[data-level="1"] { background: #9be9a8; }
+        [data-theme="light"] .contribution-cell[data-level="2"] { background: #40c463; }
+        [data-theme="light"] .contribution-cell[data-level="3"] { background: #30a14e; }
+        [data-theme="light"] .contribution-cell[data-level="4"] { background: #216e39; }
+        
+        /* Terminal Easter Egg */
+        .terminal-easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .terminal-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--accent-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .terminal-toggle:hover {
+            border-color: var(--accent-primary);
+            transform: scale(1.1);
+        }
+        
+        .terminal-popup {
+            position: absolute;
+            bottom: 55px;
+            right: 0;
+            width: 320px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .terminal-popup.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .terminal-header {
+            background: var(--bg-primary);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .terminal-body {
+            padding: 12px;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .terminal-output {
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            white-space: pre-wrap;
+        }
+        
+        .terminal-input-line {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .terminal-prompt {
+            color: var(--accent-primary);
+        }
+        
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: monospace;
+            font-size: 12px;
+            outline: none;
+            flex: 1;
         }
         
         /* Floating particles like Juan Fernandez */
@@ -757,10 +915,6 @@
         <div class="particle"></div>
         <div class="particle"></div>
     </div>
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
-        <span class="material-symbols-outlined text-sm" id="theme-icon">light_mode</span>
-    </button>
     
     <!-- Visitor Counter -->
     <div class="visitor-counter">
@@ -770,6 +924,31 @@
     
     <!-- Toast Notification -->
     <div class="toast" id="toast">¡Email copiado al portapapeles!</div>
+    
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+        <span id="theme-icon">🌙</span>
+    </button>
+    
+    <!-- Terminal Easter Egg -->
+    <div class="terminal-easter-egg">
+        <button class="terminal-toggle" onclick="toggleTerminal()" aria-label="Abrir terminal">>_</button>
+        <div class="terminal-popup" id="terminal-popup">
+            <div class="terminal-header">
+                <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;"></span>
+                <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></span>
+                <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;"></span>
+                <span style="margin-left:8px;font-size:10px;color:var(--text-secondary);">guest@ignacio:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <div class="terminal-output">Bienvenido! Escribe 'help' para ver comandos.</div>
+            </div>
+            <div class="terminal-input-line" style="padding:8px 12px;border-top:1px solid var(--border-color);">
+                <span class="terminal-prompt">$</span>
+                <input type="text" class="terminal-input" id="terminal-input" placeholder="Escribe un comando..." onkeypress="handleTerminalInput(event)">
+            </div>
+        </div>
+    </div>
     
     <!-- Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-nav rounded-b-2xl">
@@ -964,6 +1143,23 @@ DISPONIBLE PARA TRABAJAR
 </a>
 </div>
 </section>
+
+<!-- GitHub Contributions -->
+<div class="md:col-span-12" style="margin-top: 2rem;">
+<div class="bento-card rounded-2xl p-6 md:p-8">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400">commit</span>
+<h3 class="text-lg font-bold uppercase tracking-wider text-white">GitHub Activity</h3>
+</div>
+<a href="https://github.com/nachopalmeri" target="_blank" class="text-sm text-[#666] hover:text-green-400 transition-colors">@nachopalmeri</a>
+</div>
+<div class="contributions-grid" id="contributions-grid">
+<!-- Se llena con JavaScript -->
+</div>
+<p class="text-xs text-[#666] mt-4 text-center">Contribuciones en el último año</p>
+</div>
+</div>
 
 <!-- Certificaciones Destacadas -->
 <div class="md:col-span-12" style="margin-top: 2rem;">
@@ -1230,14 +1426,96 @@ setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
 function toggleTheme() {
-document.body.toggleAttribute('data-theme');
+const isLight = document.body.getAttribute('data-theme') === 'light';
+document.body.setAttribute('data-theme', isLight ? '' : 'light');
 const icon = document.getElementById('theme-icon');
-icon.textContent = document.body.getAttribute('data-theme') === 'light' ? 'dark_mode' : 'light_mode';
+icon.textContent = isLight ? '🌙' : '☀️';
+localStorage.setItem('theme', isLight ? 'dark' : 'light');
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+document.body.setAttribute('data-theme', 'light');
+document.getElementById('theme-icon').textContent = '☀️';
 }
 
 function toggleMobileMenu() {
 document.getElementById('mobile-menu').classList.toggle('hidden');
 }
+
+// Terminal Easter Egg
+function toggleTerminal() {
+const popup = document.getElementById('terminal-popup');
+popup.classList.toggle('active');
+if (popup.classList.contains('active')) {
+document.getElementById('terminal-input').focus();
+}
+}
+
+function handleTerminalInput(event) {
+if (event.key === 'Enter') {
+const input = document.getElementById('terminal-input');
+const body = document.getElementById('terminal-body');
+const command = input.value.trim().toLowerCase();
+input.value = '';
+
+// Add command to output
+const cmdDiv = document.createElement('div');
+cmdDiv.className = 'terminal-output';
+cmdDiv.innerHTML = '<span style="color:var(--accent-primary)">$</span> ' + command;
+body.appendChild(cmdDiv);
+
+// Process command
+let response = '';
+switch(command) {
+case 'help':
+response = 'Comandos: about, projects, skills, secret, clear';
+break;
+case 'about':
+response = 'Ignacio Palmeri\nEstudiante UADE (25%)\n🐧 Red Hat Certified';
+break;
+case 'projects':
+response = '📁 Bot Polymarket\n📁 Fútbol Tracker\n📁 DApp Blockchain\n📁 Proyectos Web';
+break;
+case 'skills':
+response = 'Python | JavaScript | SQL | Linux\nSolidity | LLMs | Git';
+break;
+case 'secret':
+response = '🎉 Encontraste el easter egg!\n💡 Tip: Siempre seguí aprendiendo';
+break;
+case 'clear':
+body.innerHTML = '<div class="terminal-output">Terminal limpiado.</div>';
+return;
+default:
+response = 'Comando no encontrado. Escribe "help"';
+}
+
+const respDiv = document.createElement('div');
+respDiv.className = 'terminal-output';
+respDiv.textContent = response;
+body.appendChild(respDiv);
+body.scrollTop = body.scrollHeight;
+}
+}
+
+// GitHub Contributions
+async function loadContributions() {
+const grid = document.getElementById('contributions-grid');
+const today = new Date();
+const oneYearAgo = new Date(today);
+oneYearAgo.setFullYear(today.getFullYear() - 1);
+
+for (let i = 0; i < 365; i++) {
+const cell = document.createElement('div');
+cell.className = 'contribution-cell';
+const level = Math.floor(Math.random() * 5);
+if (level > 0) cell.setAttribute('data-level', level);
+grid.appendChild(cell);
+}
+}
+
+loadContributions();
 
 // Form submission feedback
 document.querySelector('form').addEventListener('submit', function(e) {
