@@ -53,6 +53,25 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Subtle Grain Texture Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.02;
 }
 
 ::selection {
@@ -1152,4 +1171,95 @@ body {
 .nav-overlay.is-open {
   opacity: 1;
   visibility: visible;
+}
+
+/* =============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================= */
+
+/* Skip Link for Keyboard Navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-green);
+  color: white;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0 0 4px 0;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
+/* Focus States for Interactive Elements */
+.nav-link:focus-visible,
+.work-card:focus-visible,
+.social-link:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+/* Cursor Pointer for Clickable Elements */
+.work-card,
+.work-card-wrapper,
+.hero-v2-patch,
+.hero-v2-cursor,
+.cert-item {
+  cursor: pointer;
+}
+
+/* Color Scheme for Dark Mode */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .hero-v2-cursor {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .photo-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .work-card:hover {
+    transform: none !important;
+  }
+  
+  .card-peek {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #000000;
+    --text-secondary: #000000;
+  }
+  
+  [data-theme="dark"] {
+    --border: #FFFFFF;
+    --text-secondary: #FFFFFF;
+  }
 }
