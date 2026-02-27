@@ -25,15 +25,29 @@
   <link rel="preload" as="image" href="assets/hero/patch-argentina.svg">
   <link rel="preload" as="image" href="assets/hero/patch-gallina.svg">
   
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <script type="module" src="https://unpkg.com/@phosphor-icons/webcomponents"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
   
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body data-concept="B">
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  
+  <!-- Concept Toggle -->
+  <div class="concept-switch-wrapper">
+    <button class="concept-switch" onclick="toggleConcept()" aria-label="Cambiar concepto">
+      <span class="concept-switch-track">
+        <span class="concept-switch-thumb"></span>
+      </span>
+      <span class="concept-switch-labels">
+        <span class="concept-label-a">A</span>
+        <span class="concept-label-b">B</span>
+      </span>
+    </button>
+    <span class="concept-tagline">Dos enfoques. Un mismo objetivo.</span>
+  </div>
   
   <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar tema">
     <span id="theme-icon">🌙</span>
@@ -647,6 +661,42 @@
         el.style.transform = 'scale(0.9) translate(0, 0)';
       });
     });
+
+    // Concept Toggle (A/B)
+    function toggleConcept() {
+      const body = document.body;
+      const currentConcept = body.dataset.concept;
+      const newConcept = currentConcept === 'A' ? 'B' : 'A';
+      
+      // Add transition animation
+      body.style.transition = 'all 0.3s ease';
+      body.style.opacity = '0.9';
+      
+      setTimeout(() => {
+        body.dataset.concept = newConcept;
+        
+        // Save preference
+        localStorage.setItem('concept', newConcept);
+        
+        // Update theme toggle position
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (newConcept === 'A') {
+          themeToggle.style.top = '80px';
+        } else {
+          themeToggle.style.top = '80px';
+        }
+        
+        setTimeout(() => {
+          body.style.opacity = '1';
+        }, 50);
+      }, 150);
+    }
+    
+    // Load saved concept preference
+    const savedConcept = localStorage.getItem('concept');
+    if (savedConcept) {
+      document.body.dataset.concept = savedConcept;
+    }
   </script>
 </body>
 </html>

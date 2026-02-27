@@ -1,8 +1,11 @@
 /* Portfolio V2 - Ignacio Palmeri
- * Estilo Eushi - Light Mode + Animations
+ * Concept A: Terminal Style (Dark + Hacker)
+ * Concept B: Minimal Style (Light + Eushi)
  */
 
-:root {
+/* Default: Concept B (Minimal) */
+:root,
+[data-concept="B"] {
   --bg-primary: #FAFAF9;
   --bg-secondary: #F5F5F4;
   --bg-card: rgba(255, 255, 255, 0.9);
@@ -19,9 +22,11 @@
   --font-heading: 'Bricolage Grotesque', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --glow-color: transparent;
 }
 
-[data-theme="dark"] {
+/* Concept A: Terminal Style */
+[data-concept="A"] {
   --bg-primary: #000000;
   --bg-secondary: #0a0a0a;
   --bg-card: rgba(10, 10, 10, 0.9);
@@ -31,9 +36,27 @@
   --border: #1F1F1F;
   --border-light: rgba(255, 255, 255, 0.08);
   --accent: #A1A1A1;
+  --accent-green: #22C55E;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --glow-color: rgba(34, 197, 94, 0.15);
+}
+
+/* Dark mode overrides for both concepts */
+[data-theme="dark"][data-concept="B"],
+[data-concept="A"][data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: rgba(10, 10, 10, 0.9);
+  --text-primary: #EDEDED;
+  --text-secondary: #A1A1A1;
+  --text-muted: #666666;
+  --border: #1F1F1F;
+  --border-light: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -1311,4 +1334,119 @@ body::before {
 #about,
 #contact {
   scroll-margin-top: 80px;
+}
+
+/* =============================================
+   CONCEPT SWITCH (A/B Toggle)
+   ============================================= */
+.concept-switch-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.concept-tagline {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+.concept-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.concept-switch:hover {
+  border-color: var(--accent-green);
+}
+
+.concept-switch-track {
+  width: 44px;
+  height: 24px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.concept-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-concept="A"] .concept-switch-thumb {
+  transform: translateX(20px);
+  background: var(--accent-green);
+}
+
+.concept-switch-labels {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding-right: 4px;
+}
+
+.concept-label-a,
+.concept-label-b {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+[data-concept="A"] .concept-label-a {
+  opacity: 1;
+  color: var(--accent-green);
+}
+
+[data-concept="B"] .concept-label-b {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Concept-specific styles */
+[data-concept="A"] .hero-v2-title {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+[data-concept="A"] body {
+  /* Terminal particles effect */
+}
+
+[data-concept="A"] .work-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.05);
+}
+
+[data-concept="A"] .work-card:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.15);
+}
+
+/* Theme toggle position adjustment when concept A */
+[data-concept="A"] .theme-toggle {
+}
+
+/* Body transition for concept change */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
