@@ -210,6 +210,46 @@ body::before {
   z-index: 2;
 }
 
+/* Concept Toggle Button */
+.hero-v2-concept-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+}
+
+.concept-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.concept-toggle:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.concept-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.concept-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -1130,7 +1170,7 @@ body::before {
    ============================================= */
 .theme-toggle {
   position: fixed;
-  top: 20px;
+  top: 80px;
   right: 20px;
   width: 44px;
   height: 44px;
